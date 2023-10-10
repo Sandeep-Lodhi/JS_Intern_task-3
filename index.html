@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandeep Lodhi_JS_Task-5</title>
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- ---------------------- -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- --------------------------------- -->
+    <link rel="stylesheet" href="CSS/JQuery Task-2.css">
+</head>
+
+<body>
+
+            <!-- ----------------------------- -->
+
+            <div class="container">
+                <!-- <h2>Modal Example</h2> -->
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg mt-5" data-toggle="modal" data-target="#myModal">Open
+                    Modal</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog modal-fullscreen modal-lg">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+
+                                <h4 class="modal-title">Modal Header</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- <div class="container" id="con"> -->
+                                <h2 class="mt-5 mb-5">Customer Form</h2>
+                                <div class="mb-5">
+                                    <div class="row">
+                                        <!-- First name input field.  -->
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" name="firtName" class="form-control" id="firstname"
+                                                placeholder="Sandeep" pattern="^[a-z]+" required />
+                                            <!-- <i class="fa-solid fa-circle-check"></i>
+                              <i class="fa-solid fa-circle-exclamation"></i> -->
+                                            <small id="vfname"></small>
+                                        </div>
+                                        <!-- Last name Input field.  -->
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label for="lastName ">Last Name</label>
+                                            <input type="text" name="lastName" class="form-control" id="lastname"
+                                                placeholder="Rajpoot" required>
+                                            <small id="vlname"></small>
+                                        </div>
+                                        <!-- date of birth input field.  -->
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label for="dateOfBirth">Date Of Birth</label>
+                                            <input type="date" name="dateOfBirth" class="form-control" id="dob"
+                                                placeholder="DD/MM/YYYY" required>
+                                            <small id="vdob"></small>
+                                        </div>
+                                        <!-- mobile input field .  -->
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label for="mobile">Mobile</label>
+                                            <input type="number" name="mobile" class="form-control" id="mobile"
+                                                placeholder="100000100000" required>
+                                            <small id="vmobile"></small>
+                                            <!-- <p id="demo"></p> -->
+                                        </div>
+                                        <!-- Email Input Field  -->
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label for="email">Email</label>
+                                            <input type="email" name="email" class="form-control" id="email"
+                                                placeholder="add@gmail.com" required>
+                                            <small id="vemail"></small>
+                                        </div>
+                                        <!-- Address Input Field  -->
+                                        <div class="form-group col-md-4 mb-3">
+                                            <label for="name">Address</label>
+                                            <input type="text" name="address" class="form-control" id="address" value=""
+                                                placeholder="Makan/building,Street,Village/Area,..,.." required>
+                                            <small id="vaddress"></small>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Submit of update button (write) create here   -->
+                                <hr>
+
+                                <div class="row d-flex mt-4">
+                                    <div class="col">
+                                        <h2 class="mt-2 mb-4">Product Form</h2>
+                                    </div>
+                                    <div class="col text-end">
+                                        <button class="btn btn-success" id="SubmitOnData"
+                                            onclick="AddRow()">Add</button>
+                                    </div>
+                                </div>
+
+                                <div class="row product " id="field">
+                                    <div class="row mt-2 ">
+
+                                        <!-- Product name inter field  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <label for="name">Product Name</label>
+                                            <input type="text" name="product name" class="form-control name mt-2"
+                                                id="name0" placeholder="Car" required>
+                                            <small id="vname0"></small>
+                                        </div>
+                                        <!-- Product Price inter here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <label for="price">Price</label>
+                                            <input type="number" name="Price" class="form-control price mt-2"
+                                                id="price0" placeholder="200000000₹" required>
+                                            <small id="vprice0"></small>
+                                        </div>
+                                        <!-- Discount field add here  -->
+                                        <div class="form-group col-md-1 mb-3">
+                                            <label for="discount">Discount</label>
+                                            <input type="number" name="discount" class="form-control discount mt-2"
+                                                id="discount0" placeholder="18%" required>
+                                            <small id="vdiscount0"></small>
+                                        </div>
+                                        <!-- Final Price add here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <label for="final price">Final Price</label>
+                                            <input type="number" name="final price" class="form-control finalPrice mt-2"
+                                                id="finalprice0" placeholder="Enter Final Price">
+                                            <small id="vfinalprice0"></small>
+                                        </div>
+                                        <!-- Product type add here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <div class="mb-3">
+                                                <label for="product type" class="form-label">Product Type</label>
+                                                <select class="form-select form-select-sm productType mt-2" id="type0"
+                                                    name="product type" required>
+                                                    <option value="" selected>Select Type</option>
+                                                    <option value="Electronics">Electronics</option>
+                                                    <option value="2">Cosmatics</option>
+                                                    <option value="Cosmatics">Automobile</option>
+                                                    <option value="Vegitabes">Vegitabes</option>
+                                                    <option value="Grocery">Grocery</option>
+                                                    <option value="Stationery">Stationery</option>
+                                                    <option value="Clothes">Clothes</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                                <small id="vtype0"></small>
+                                            </div>
+
+                                        </div>
+                                        <!-- Product Status field create here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <div class="mb-3">
+                                                <label for="Selecting Status" class="form-label">Payment Status</label>
+                                                <select class="form-select form-select-sm paymentStatus mt-2"
+                                                    id="status0">
+                                                    <option value="" selected>Choose Status</option>
+                                                    <option value="Paid">Paid</option>
+                                                    <option value="UnPaid">UnPaid</option>
+                                                    <option value="NA">NA</option>
+
+                                                </select>
+                                                <small id="vstatus0"></small>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-1 mb-3">
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Second default product field  -->
+                                    <div class="row me-2 product">
+                                        <!-- Product name inter field  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <label for="name"></label>
+                                            <input type="text" name="product name" class="form-control name" id="name1"
+                                                placeholder="Car" required>
+                                            <small id="vname1"></small>
+                                        </div>
+                                        <!-- Product Price inter here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <label for="price"></label>
+                                            <input type="number" name="Price" class="form-control price" id="price1"
+                                                placeholder="200000000₹" required>
+                                            <small id="vprice1"></small>
+                                        </div>
+                                        <!-- Discount field add here  -->
+                                        <div class="form-group col-md-1 mb-3">
+                                            <label for="discount"></label>
+                                            <input type="number" name="discount" class="form-control discount"
+                                                id="discount1" placeholder="18%" required>
+                                            <small id="vdiscount1"></small>
+                                        </div>
+                                        <!-- Final Price add here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <label for="final price"></label>
+                                            <input type="number" name="final price" class="form-control finalPrice"
+                                                id="finalprice1" placeholder="Enter Final Price" required>
+                                            <small id="vfinalprice1"></small>
+                                        </div>
+                                        <!-- Product type add here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <div class="mb-3">
+                                                <label for="product type" class="form-label"></label>
+                                                <select class="form-select form-select-sm productType" id="type1"
+                                                    name="product type" required>
+                                                    <option value="" selected>Select Type</option>
+                                                    <option value="Electronics">Electronics</option>
+                                                    <option value="Cosmatics">Cosmatics</option>
+                                                    <option value="Automobile">Automobile</option>
+                                                    <option value="Vegitabes">Vegitabes</option>
+                                                    <option value="Grocery">Grocery</option>
+                                                    <option value="Stationery">Stationery</option>
+                                                    <option value="Clothes">Clothes</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                                <small id="vtype1"></small>
+                                            </div>
+
+                                        </div>
+                                        <!-- Product Status field create here  -->
+                                        <div class="form-group col-md-2 mb-3">
+                                            <div class="mb-3">
+                                                <label for="Selecting Status" class="form-label"></label>
+                                                <select class="form-select form-select-sm paymentStatus" id="status1"
+                                                    required>
+                                                    <option value="" selected>Choose Status</option>
+                                                    <option value="Paid">Paid</option>
+                                                    <option value="UnPaid">UnPaid</option>
+                                                    <option value="NA">NA</option>
+
+                                                </select>
+                                                <small id="vstatus1"></small>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="form-group col-md-1 mb-3">
+  
+                                        </div> -->
+                                    </div>
+                                   
+                                </div>
+                                <div class="row text-center mt-5">
+                                    <div class="col-lg-12 ">
+                                        <button class="btn btn-success" id="Submit" onclick="result()"> Submit </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- </div> -->
+
+    <!-- ----------------  -->
+
+
+    <!-- add Data Buttton  -->
+  
+    </form>
+    <div class="container mt-5">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Sn</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+  
+    </div>
+    <script src="Bootstrap/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+    <script src="/JQuery/Sandeep_JQuery_Task.js"></script>
+</body>
+
+</html>
